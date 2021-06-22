@@ -75,10 +75,9 @@ namespace ConsoleApp1
 
             WaitForKeyAndClearScreen();
             Console.WriteLine("5. Most expensive flat with tax by City: ");
-            List<Record> mostExpensiveFlatsWithTaxByCities = new List<Record>();
             foreach (var group in GroupByCity)
             {
-                var mostExpensiveFlatInCity = group.Aggregate((a, b) => a.Price > b.Price ? a : b);
+                Console.WriteLine(group.Aggregate((a, b) => a.Price > b.Price ? a : b).ToString()); //just need to find most expensive flat by City, since tax is the same for every flat in given city.
             }
 
             WaitForKeyAndClearScreen();
